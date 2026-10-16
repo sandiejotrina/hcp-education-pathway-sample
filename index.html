@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transcatheter Valve Education Pathway</title>
+<meta name="description" content="An illustrative, non-promotional curriculum map for transcatheter mitral and tricuspid therapies. A sample by Sandie Dela Cruz, AuD, OD, MBA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Merriweather:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --bg-soft:#f5f6f8; --bg-side:#fafbfc; --ink:#1f2933; --ink-soft:#52606d; --line:#e1e5ea;
+  --accent:#3e5c76; --accent-ink:#ffffff; --accent-soft:#e8eef4;
+  --ok:#2f7d5b; --ok-soft:#e5f3ec; --bad:#a6423a; --bad-soft:#f8e9e7;
+  --side-w:300px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15191e; --bg-soft:#1d232a; --bg-side:#181d23; --ink:#e6e9ed; --ink-soft:#9aa5b1; --line:#2c343d;
+    --accent:#8fb3d1; --accent-ink:#10161c; --accent-soft:#22303d;
+    --ok:#6cc79c; --ok-soft:#1b2f26; --bad:#e58b82; --bad-soft:#35201e;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15191e; --bg-soft:#1d232a; --bg-side:#181d23; --ink:#e6e9ed; --ink-soft:#9aa5b1; --line:#2c343d;
+  --accent:#8fb3d1; --accent-ink:#10161c; --accent-soft:#22303d;
+  --ok:#6cc79c; --ok-soft:#1b2f26; --bad:#e58b82; --bad-soft:#35201e;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:17px/1.65 Lato,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* Layout */
+.app{display:flex;min-height:100vh}
+.side{width:var(--side-w);flex:0 0 var(--side-w);background:var(--bg-side);border-right:1px solid var(--line);position:sticky;top:0;height:100vh;overflow-y:auto;display:flex;flex-direction:column}
+.side-head{padding:24px 22px 18px;border-bottom:1px solid var(--line)}
+.side-title{font-weight:900;font-size:15px;line-height:1.35;margin:0 0 14px;cursor:pointer}
+.progress{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.progress span{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+.progress-label{font-size:13px;color:var(--ink-soft);margin-top:8px}
+.nav{list-style:none;margin:0;padding:10px 0}
+.nav button{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;background:none;border:0;padding:12px 22px;cursor:pointer;font-size:15px;line-height:1.4;color:var(--ink-soft)}
+.nav button:hover{background:var(--bg-soft);color:var(--ink)}
+.nav button[aria-current="page"]{color:var(--ink);font-weight:700;background:var(--accent-soft);box-shadow:inset 3px 0 0 var(--accent)}
+.dot{flex:0 0 18px;height:18px;border-radius:50%;border:2px solid var(--line);margin-top:1px;display:grid;place-items:center;font-size:11px}
+.done .dot{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.side-foot{margin-top:auto;padding:16px 22px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-soft);display:flex;justify-content:space-between;align-items:center;gap:8px}
+.icon-btn{background:none;border:1px solid var(--line);border-radius:6px;padding:4px 10px;cursor:pointer;font-size:13px;color:var(--ink-soft)}
+.main{flex:1;min-width:0}
+.topbar{display:none}
+
+/* Cover */
+.cover{min-height:100vh;display:flex;align-items:center;background:
+  radial-gradient(1200px 500px at 85% -10%, var(--accent-soft), transparent 60%),
+  radial-gradient(900px 500px at -10% 110%, var(--accent-soft), transparent 60%), var(--bg)}
+.cover-inner{max-width:760px;margin:0 auto;padding:64px 32px}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.cover h1{font-size:clamp(30px,5vw,46px);line-height:1.15;font-weight:900;margin:12px 0 16px;letter-spacing:-.01em}
+.cover .sub{font-size:20px;color:var(--ink-soft);margin:0 0 28px}
+.cover .desc{border-left:3px solid var(--accent);padding-left:18px;color:var(--ink-soft);margin:0 0 36px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);border:0;border-radius:6px;padding:14px 26px;font-weight:700;font-size:16px;cursor:pointer;text-decoration:none}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:none;color:var(--accent);border:2px solid var(--accent)}
+.cover-meta{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:36px;font-size:14px;color:var(--ink-soft)}
+
+/* Lesson */
+.lesson-head{background:var(--bg-soft);border-bottom:1px solid var(--line);padding:64px 32px 48px}
+.lesson-head .wrap,.blocks .wrap{max-width:760px;margin:0 auto}
+.lesson-num{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.lesson-head h1{font-size:clamp(28px,4.5vw,40px);line-height:1.2;margin:10px 0 0;font-weight:900}
+.blocks{padding:16px 32px 80px}
+.block{padding:28px 0}
+.block h2{font-size:28px;line-height:1.25;margin:0 0 14px;font-weight:900}
+.block p{margin:0 0 14px}
+.block p:last-child{margin-bottom:0}
+.cite{display:inline-block;font-size:12px;font-weight:700;color:var(--accent);background:var(--accent-soft);border-radius:4px;padding:0 6px;margin:0 1px;text-decoration:none;vertical-align:1px;line-height:1.6}
+.cite:hover{text-decoration:underline}
+
+.quote{text-align:center;padding:40px 8px}
+.quote blockquote{margin:0;font-family:Merriweather,Georgia,serif;font-style:italic;font-size:22px;line-height:1.55}
+.quote blockquote::before{content:"\201C";display:block;font-size:64px;line-height:.6;color:var(--accent);font-style:normal;margin-bottom:14px}
+.quote figcaption{margin-top:18px;font-size:14px;color:var(--ink-soft)}
+
+/* Process */
+.process{border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.process-stage{padding:32px 28px;min-height:230px}
+.process-step{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.process-stage h3{font-size:24px;margin:6px 0 12px}
+.field{margin:0 0 8px}
+.field b{color:var(--ink)}
+.gate{display:inline-block;margin-top:8px;background:var(--accent-soft);border-radius:999px;padding:4px 14px;font-size:14px;font-weight:700}
+.process-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;background:var(--bg-soft);border-top:1px solid var(--line)}
+.pips{display:flex;gap:8px;flex-wrap:wrap}
+.pip{width:30px;height:30px;border-radius:50%;border:2px solid var(--line);background:var(--bg);cursor:pointer;font-size:13px;font-weight:700;color:var(--ink-soft)}
+.pip[aria-current="step"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.pip.seen{border-color:var(--accent);color:var(--accent)}
+.pip.seen[aria-current="step"]{color:var(--accent-ink)}
+.arrows{display:flex;gap:8px}
+.arrows button{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--bg);cursor:pointer;font-size:18px}
+.arrows button:disabled{opacity:.35;cursor:default}
+
+/* Accordion */
+.acc{border-top:1px solid var(--line)}
+.acc-item{border-bottom:1px solid var(--line)}
+.acc-item button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:none;border:0;text-align:left;padding:18px 4px;font-weight:700;font-size:18px;cursor:pointer}
+.acc-item button .plus{flex:0 0 26px;height:26px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:18px;transition:transform .2s}
+.acc-item button[aria-expanded="true"] .plus{transform:rotate(45deg)}
+.acc-panel{padding:0 4px 20px;color:var(--ink-soft)}
+.acc-label{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+
+/* Table */
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.5;min-width:620px}
+th,td{padding:14px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+thead th{background:var(--bg-soft);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+tbody tr:last-child td{border-bottom:0}
+td:first-child{font-weight:700}
+td.no{color:var(--bad)} td.yes{color:var(--ok)}
+.note{font-size:14px;color:var(--ink-soft);margin-top:10px}
+
+/* Numbered list */
+.numlist{list-style:none;margin:0;padding:0;counter-reset:n}
+.numlist li{counter-increment:n;display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.numlist li:last-child{border-bottom:0}
+.numlist li::before{content:counter(n);flex:0 0 36px;height:36px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-weight:900}
+.numlist b{display:block}
+
+/* Knowledge check */
+.kc{background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:32px 28px}
+.kc-tag{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.kc h3{font-size:21px;line-height:1.4;margin:8px 0 6px}
+.kc .hint{font-size:14px;color:var(--ink-soft);margin:0 0 18px}
+.opts{display:grid;gap:10px;margin:0 0 20px;padding:0;border:0}
+.opt{display:flex;gap:14px;align-items:flex-start;background:var(--bg);border:2px solid var(--line);border-radius:8px;padding:14px 16px;cursor:pointer;line-height:1.5}
+.opt:hover{border-color:var(--accent)}
+.opt input{margin:4px 0 0;accent-color:var(--accent);width:18px;height:18px;flex:0 0 18px}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.kc-actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn:disabled{opacity:.45;cursor:default;filter:none}
+.fb{margin-top:18px;border-radius:8px;padding:16px 18px;display:none}
+.fb.show{display:block}
+.fb.ok{background:var(--ok-soft);border-left:4px solid var(--ok)}
+.fb.no{background:var(--bad-soft);border-left:4px solid var(--bad)}
+.fb strong{display:block;margin-bottom:4px}
+
+/* Sources */
+.sources{list-style:none;padding:0;margin:0}
+.sources li{padding:14px 0;border-bottom:1px solid var(--line);display:flex;gap:14px;font-size:15px;scroll-margin-top:80px}
+.sources li:last-child{border-bottom:0}
+.sources .sid{flex:0 0 34px;font-weight:900;color:var(--accent)}
+.sources li:target{background:var(--accent-soft);border-radius:6px}
+.sources a{word-break:break-word}
+.disclaimer{background:var(--bg-soft);border-radius:10px;padding:24px}
+
+.continue{border-top:1px solid var(--line);margin-top:24px;padding-top:40px;text-align:center}
+.continue .next-label{display:block;font-size:14px;color:var(--ink-soft);margin-bottom:12px}
+
+/* Mobile */
+@media (max-width: 900px){
+  .side{position:fixed;left:0;top:0;z-index:20;transform:translateX(-100%);transition:transform .25s;width:min(88vw,var(--side-w))}
+  .side.open{transform:none;box-shadow:0 0 40px rgba(0,0,0,.2)}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:15;display:none}
+  .scrim.open{display:block}
+  .topbar{display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 16px}
+  .topbar .t{font-weight:700;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .lesson-head{padding:40px 16px 32px}
+  .blocks{padding:8px 16px 64px}
+  .cover-inner{padding:48px 16px}
+  .process-stage,.kc{padding:24px 18px}
+  .quote blockquote{font-size:19px}
+}
+@media print{
+  .side,.topbar,.continue,.kc-actions{display:none}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="side" id="side" aria-label="Course outline">
+    <div class="side-head">
+      <p class="side-title" id="sideTitle" tabindex="0" role="link">Transcatheter Mitral and Tricuspid Therapies: An HCP Education Pathway</p>
+      <div class="progress" aria-hidden="true"><span id="bar"></span></div>
+      <div class="progress-label" id="barLabel">0% complete</div>
+    </div>
+    <ul class="nav" id="nav"></ul>
+    <div class="side-foot">
+      <span>Illustrative sample</span>
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle dark mode">Theme</button>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+  <main class="main" id="main">
+    <div class="topbar">
+      <button class="icon-btn" id="menuBtn" type="button" aria-label="Open course outline" aria-controls="side">&#9776; Menu</button>
+      <span class="t" id="topTitle"></span>
+    </div>
+    <div id="view"></div>
+  </main>
+</div>
+
+<script>
+const S = {
+  S1:{t:"FDA approval of MitraClip, October 2013, for significant symptomatic degenerative mitral regurgitation at prohibitive surgical risk. TCTMD news report, 2013.",u:"https://www.tctmd.com/news/mitraclip-gains-fda-approval-nonsurgical-patients"},
+  S2:{t:"Abbott press release, March 14, 2019, FDA expanded indication for secondary mitral regurgitation (COAPT).",u:"https://abbott.mediaroom.com/2019-03-14-Abbott-Receives-FDA-Approval-for-Expanded-Indication-for-MitraClip-TM-Device"},
+  S3:{t:"Stone GW et al. Transcatheter mitral-valve repair in patients with heart failure (COAPT). New England Journal of Medicine, 2018."},
+  S4:{t:"Abbott press release, April 2, 2024, FDA approval of TriClip, first-of-its-kind device to repair the tricuspid valve.",u:"https://abbott.mediaroom.com/2024-04-02-Abbott-Receives-FDA-Approval-for-TriClip-TM-,-First-of-Its-Kind-Device-to-Repair-Leaky-Tricuspid-Heart-Valve"},
+  S5:{t:"Sorajja P et al. Transcatheter repair for patients with tricuspid regurgitation (TRILUMINATE Pivotal). New England Journal of Medicine, 2023."},
+  S6:{t:"CMS National Coverage Determination 20.33, Transcatheter Edge-to-Edge Repair (TEER) for Mitral Valve Regurgitation, version 3, effective July 31, 2023.",u:"https://www.cms.gov/medicare-coverage-database/view/ncd.aspx?ncdid=363&ncdver=3"},
+  S7:{t:"CMS National Coverage Determination 20.38, Transcatheter Edge-to-Edge Repair for Tricuspid Valve Regurgitation (T-TEER), effective July 2, 2025, implemented January 5, 2026.",u:"https://www.cms.gov/medicare-coverage-database/view/ncd.aspx?ncdid=381&ncdver=1"},
+  S8:{t:"Otto CM et al. 2020 ACC/AHA Guideline for the Management of Patients With Valvular Heart Disease. Circulation, 2021."}
+};
+// [S1] in text becomes a citation chip linking to the sources lesson
+const cite = s => s.replace(/\[(S\d)\]/g,(m,id)=>`<a class="cite" href="#sources-${id}" data-src="${id}" title="${S[id].t.replace(/"/g,'&quot;')}">${id}</a>`);
+
+const COURSE = {
+  title:"Transcatheter Mitral and Tricuspid Therapies: An HCP Education Pathway",
+  tag:"Illustrative Curriculum Map",
+  sub:"From awareness to proctored independence. A sample by Sandie Dela Cruz, AuD, OD, MBA.",
+  desc:"An illustrative, non-promotional curriculum map showing how a global medical education function could take a heart team from first awareness to proctored independence, with a proctor readiness and attestation workflow, a digital on-demand learning plan, and a KPI set. Built from public sources. Not Abbott material. Not medical advice.",
+  lessons:[
+  {id:"why", title:"Why a pathway, not a course", blocks:[
+    {type:"text", h:"The problem a pathway solves", p:["A transcatheter valve therapy is adopted by a team, not a person. The operator, the interventional echocardiographer, the heart failure cardiologist, the cardiac surgeon, and the cath lab staff each need different knowledge and different practice, and the site needs evidence that the team is ready before the first patient. A single course cannot do that. A pathway with gates can."]},
+    {type:"text", p:["Two therapies anchor this sample. MitraClip received FDA approval in October 2013 for patients with significant symptomatic degenerative mitral regurgitation at prohibitive surgical risk [S1], and in March 2019 the FDA expanded the indication to secondary mitral regurgitation on the strength of the COAPT trial [S2] [S3]. TriClip received FDA approval in April 2024 as the first transcatheter device to repair the tricuspid valve [S4], supported by the TRILUMINATE Pivotal trial [S5]."]},
+    {type:"quote", q:"All physicians who participate in the procedure must have device-specific training as required by the manufacturer.", by:"CMS National Coverage Determination 20.33, Transcatheter Edge-to-Edge Repair for Mitral Valve Regurgitation, 2023 [S6]"},
+    {type:"text", p:["That sentence is why the pathway ends in an attestation and not a certificate of completion. Training is a condition of safe use and, in the United States, a condition of coverage. The education function has to be able to show it."]},
+    {type:"kc", kind:"single", q:"Why does this pathway end with a signed attestation rather than a course completion?",
+      opts:["Completion certificates are not supported by most learning platforms.","Device-specific training is a condition of safe use and, in the United States, referenced by coverage rules, so the program must be able to evidence it.","Attestations are required by the ACC/AHA guideline.","Physicians prefer attestations."], ans:[1],
+      ok:"Right. CMS NCD 20.33 ties mitral TEER coverage to device-specific training as required by the manufacturer [S6]. The attestation is the evidence.",
+      no:"Look again at the quote block above. The requirement comes from the coverage determination and the manufacturer's training requirements, not from the platform, the guideline, or preference."}
+  ]},
+  {id:"stages", title:"The five stages", blocks:[
+    {type:"text", h:"From awareness to proctored independence"},
+    {type:"process", steps:[
+      {t:"Awareness", f:[["Audience","Referring cardiologists, heart failure clinicians, imagers, administrators."],["Content","Disease burden, the evidence base, candidacy, and why a heart team decides."],["Format","Short non-promotional modules and peer-to-peer sessions."]], gate:"Gate: none"},
+      {t:"Foundations", f:[["Audience","The implanting team."],["Content","Device anatomy, the instructions for use, imaging planes and leaflet assessment, patient selection, complication recognition."],["Format","Modular e-learning with knowledge checks."]], gate:"Gate: pass the foundations assessment"},
+      {t:"Simulation", f:[["Content","Device handling on a bench or virtual simulator, imaging-guided navigation, case planning on anonymized teaching cases."],["Format","Simulation lab led by trained faculty."]], gate:"Gate: faculty-signed skills checklist covering operator and echocardiographer roles"},
+      {t:"Proctored cases", f:[["Content","First cases with a qualified proctor present, following the manufacturer's device-specific training requirements [S6]."],["Format","Pre-case planning review, proctor support, structured debrief."]], gate:"Gate: proctor attestation"},
+      {t:"Independence and continuing education", f:[["Content","Case support on request, complex anatomy masterclasses, imaging refreshers, device generation updates, peer forums."],["Format","On-demand library plus regional live events."]], gate:"Gate: none; measured by case support requests"}
+    ]},
+    {type:"acc", label:"Who is on the heart team", items:[
+      ["Cardiac surgeon","Required on the heart team for both mitral TEER [S6] and tricuspid TEER [S7]. For mitral TEER, NCD 20.33 specifies minimum mitral surgical volumes."],
+      ["Interventional cardiologist","Required for both. NCD 20.33 specifies career structural heart and trans-septal experience minimums for mitral TEER [S6]."],
+      ["Heart failure cardiologist","Required for functional mitral regurgitation under NCD 20.33 and for all tricuspid TEER under NCD 20.38 [S6] [S7]."],
+      ["Interventional echocardiographer","Required for both; must perform transesophageal echocardiography during the procedure and may not also furnish anesthesiology during the same procedure [S6]."]
+    ]},
+    {type:"text", p:["Each heart team role gets its own learning path in the Foundations and Simulation stages, sharing modules where content is identical so a change is made once. The 2020 ACC/AHA guideline frames when transcatheter edge-to-edge repair is a reasonable option for primary and secondary mitral regurgitation, so Awareness content for referrers is built from the guideline, not from promotional claims [S8]."]},
+    {type:"kc", kind:"multi", q:"Which of these are gates in the pathway?",
+      opts:["Passing the foundations assessment","A faculty-signed simulation skills checklist","Attending an awareness webinar","Proctor attestation after proctored cases"], ans:[0,1,3],
+      ok:"Yes. Awareness has no gate; it builds the referral and screening base. The other three are the gates that move a team toward independence.",
+      no:"Awareness is the only stage without a gate. Revisit the process block."}
+  ]},
+  {id:"proctor", title:"Proctor readiness and attestation workflow", blocks:[
+    {type:"text", h:"Six steps from request to independence", p:["The workflow below is generic and built from public requirements. Any real program would be governed by the manufacturer's training requirements, the applicable HCP interaction policy, and transparency reporting rules."]},
+    {type:"process", steps:[
+      {t:"Readiness request", d:"Regional training lead submits each heart team member and role, confirms the site meets program and coverage criteria, and attaches foundations and simulation completions pulled automatically from the learning platform."},
+      {t:"Proctor assignment and conflict check", d:"A proctor is assigned from the qualified pool by region, language, and device generation. Compliance checks for conflicts and confirms the engagement is documented under HCP interaction policy and transparency reporting."},
+      {t:"Pre-case planning review", d:"Proctor and site review imaging and the case plan against the instructions for use and selection criteria. A gap sends the team back a stage, not into the case."},
+      {t:"Proctored cases and debrief", d:"Each proctored case gets a structured observation form (team roles, imaging guidance, device steps, complication readiness) completed within 24 hours."},
+      {t:"Attestation", d:"When rubric thresholds are met, the proctor signs a digital attestation, the site medical director co-signs, and the time-stamped record is stored in the training system of record."},
+      {t:"Transition to case support", d:"The site moves to independent status with on-request clinical support. A declining case support request rate over the following quarter is the signal that independence is real."}
+    ]},
+    {type:"table", h:"Readiness rubric", cols:["Domain","Not yet","Ready","Evidence"], rows:[
+      ["Team roles","Roles unclear or one role absent","Every heart team role present and performing its function","Observation form, Step 4"],
+      ["Imaging guidance","Operator and echocardiographer not aligned on planes or targets","Shared language and real-time alignment through the case","Observation form"],
+      ["Device steps","Steps performed out of sequence or with repeated prompts","Steps per the instructions for use with minimal prompting","Observation form"],
+      ["Complication readiness","Team unable to describe the escalation plan","Escalation plan stated before the case and followed","Pre-case review record"],
+      ["Documentation","Attestation incomplete or unsigned","Attestation signed by proctor and site medical director, time-stamped","Training system of record"]
+    ]},
+    {type:"quote", q:"Despite optimal medical therapy (OMT), patients must have symptomatic TR with tricuspid valve repair being considered as appropriate by a heart team.", by:"CMS National Coverage Determination 20.38, T-TEER, 2025 [S7]"},
+    {type:"kc", kind:"single", q:"In Step 3, the pre-case review finds the imaging plan does not match the selection criteria in the instructions for use. What happens?",
+      opts:["The proctor adjusts the plan during the case.","The case proceeds and the gap is noted in the debrief.","The team returns to the relevant pathway stage before the case is scheduled.","The attestation is signed with a comment."], ans:[2],
+      ok:"Right. The planning review exists so gaps are closed before a patient is involved.",
+      no:"The review is a gate. A gap sends the team back a stage, not into the case."}
+  ]},
+  {id:"digital", title:"Digital on-demand learning plan", blocks:[
+    {type:"text", h:"One global core, localized delivery"},
+    {type:"acc", items:[
+      ["Global core","A single master curriculum per therapy, versioned with the instructions for use. Regions localize language and case examples inside the standard; they do not fork clinical content."],
+      ["Modular by role","Separate paths for operator, interventional echocardiographer, cath lab team, referring clinician, and the sales and clinical field team. Shared modules are built once."],
+      ["Train-the-trainer","Faculty and regional trainers complete a facilitation certification with observed teaching so simulation and proctoring are delivered the same way everywhere."],
+      ["Virtual simulation and case libraries","Imaging-based case planning exercises and virtual device handling that learners repeat on demand, with attempts and scores captured through xAPI."],
+      ["Governance and change control","Every module has a medical, legal, and regulatory review record, an owner, a review date, and a retirement date. An IFU change flags affected modules and notifies learners who completed them."],
+      ["AI with a human gate","An internal assistant answers trainer and field questions only from approved, versioned content, with every answer traceable to its source and a review gate before anything reaches an external audience."]
+    ]},
+    {type:"text", p:["Sales onboarding sits on the same core but with a different path: product and therapy knowledge drawn from the Foundations modules, kept clearly separate from selling skills, which belong to commercial training."]},
+    {type:"kc", kind:"single", tf:true, q:"Regions may edit the clinical content of a global module to fit local practice.",
+      opts:["True","False"], ans:[1],
+      ok:"Correct. Regions localize language and examples inside the global standard. Clinical content changes go through the global change control process so every region stays aligned to the current instructions for use.",
+      no:"Clinical content is governed globally. Localization covers language and examples, not clinical substance."}
+  ]},
+  {id:"kpi", title:"Measuring it", blocks:[
+    {type:"text", h:"The KPI set", p:["Completion shows activity. These six measures show whether education changed what teams do."]},
+    {type:"list", items:[
+      ["Time to proctored independence","Days from foundations completion to attestation, by site, region, and device generation. The headline metric."],
+      ["Case support requests per site per quarter after attestation","Should fall as independence takes hold; a rise flags a site for re-engagement."],
+      ["Training completion versus procedure volume","Share of active implanting teams whose training record is current for the device generation they use."],
+      ["Competency assessment pass rates and simulation scores","By module and region, to find weak content before it reaches a case."],
+      ["Governance health","Share of live modules inside their review date; time from IFU change to updated content."],
+      ["Learner and faculty feedback","Paired with the numbers above."]
+    ]},
+    {type:"kc", kind:"single", q:"Which metric is the headline measure of whether the pathway works?",
+      opts:["Module completion rate","Time to proctored independence","Number of modules published","Webinar attendance"], ans:[1],
+      ok:"Yes. Everything else explains this number.",
+      no:"Activity measures describe effort. Time to proctored independence describes the outcome."}
+  ]},
+  {id:"sources", title:"Sources and disclaimer", blocks:[
+    {type:"text", h:"About this sample", cls:"disclaimer", p:["This is an illustrative sample built from public information by Sandie Dela Cruz, AuD, OD, MBA. It is not Abbott material, has not been through medical, legal, or regulatory review, is not medical advice, and does not describe or draw on any confidential program of my current or former employers. I am not a cath lab clinician; a real program would be built with interventional faculty and medical experts owning the procedural content."]},
+    {type:"sources"},
+    {type:"button", label:"Talk with Sandie", href:"mailto:sandiejotrina@gmail.com"}
+  ]}
+]};
+
+/* ---------- State ---------- */
+const KEY="tmtt-course-v1";
+let state={done:{},kc:{}};
+try{const s=JSON.parse(localStorage.getItem(KEY)||"null"); if(s) state=Object.assign(state,s);}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}};
+
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+const view=$("#view"), nav=$("#nav");
+let uid=0;
+
+/* ---------- Renderers ---------- */
+function rText(b){
+  return `<div class="block ${b.cls||""}">${b.h?`<h2>${esc(b.h)}</h2>`:""}${(b.p||[]).map(p=>`<p>${cite(esc(p))}</p>`).join("")}</div>`;
+}
+function rQuote(b){
+  return `<figure class="block quote"><blockquote>${esc(b.q)}</blockquote><figcaption>${cite(esc(b.by))}</figcaption></figure>`;
+}
+function rProcess(b){
+  const id="p"+(uid++);
+  return `<div class="block"><div class="process" data-process="${id}" data-i="0">
+    <div class="process-stage" aria-live="polite"></div>
+    <div class="process-bar">
+      <div class="pips" role="tablist">${b.steps.map((s,i)=>`<button class="pip" type="button" data-go="${i}" aria-label="Step ${i+1}: ${esc(s.t)}">${i+1}</button>`).join("")}</div>
+      <div class="arrows"><button type="button" data-step="-1" aria-label="Previous step">&#8249;</button><button type="button" data-step="1" aria-label="Next step">&#8250;</button></div>
+    </div></div></div>`;
+}
+function stageHTML(b,i){
+  const s=b.steps[i];
+  const body = s.d ? `<p>${cite(esc(s.d))}</p>` : s.f.map(([k,v])=>`<p class="field"><b>${k}.</b> ${cite(esc(v))}</p>`).join("");
+  return `<div class="process-step">Step ${i+1} of ${b.steps.length}</div><h3>${esc(s.t)}</h3>${body}${s.gate?`<span class="gate">${esc(s.gate)}</span>`:""}`;
+}
+function rAcc(b){
+  return `<div class="block">${b.label?`<div class="acc-label">${esc(b.label)}</div>`:""}<div class="acc">${b.items.map(([t,d])=>{const id="a"+(uid++);
+    return `<div class="acc-item"><button type="button" aria-expanded="false" aria-controls="${id}">${esc(t)}<span class="plus" aria-hidden="true">+</span></button><div class="acc-panel" id="${id}" hidden>${cite(esc(d))}</div></div>`;}).join("")}</div></div>`;
+}
+function rTable(b){
+  return `<div class="block"><h2>${esc(b.h)}</h2><div class="table-wrap"><table><thead><tr>${b.cols.map(c=>`<th scope="col">${c}</th>`).join("")}</tr></thead><tbody>${
+    b.rows.map(r=>`<tr><td>${esc(r[0])}</td><td class="no">${esc(r[1])}</td><td class="yes">${esc(r[2])}</td><td>${esc(r[3])}</td></tr>`).join("")}</tbody></table></div></div>`;
+}
+function rList(b){
+  return `<div class="block"><ol class="numlist">${b.items.map(([t,d])=>`<li><div><b>${esc(t)}</b>${esc(d)}</div></li>`).join("")}</ol></div>`;
+}
+function rKC(b,lid,bi){
+  const key=lid+":"+bi, multi=b.kind==="multi", name="q"+(uid++);
+  const tag=b.tf?"True or false":multi?"Select all that apply":"Knowledge check";
+  return `<div class="block"><form class="kc" data-kc="${key}" novalidate>
+    <div class="kc-tag">${tag}</div>
+    <h3 id="${name}-q">${esc(b.q)}</h3>
+    ${multi?`<p class="hint">Select all that apply, then submit.</p>`:`<p class="hint">Choose one answer, then submit.</p>`}
+    <fieldset class="opts" aria-labelledby="${name}-q">${b.opts.map((o,i)=>`<label class="opt"><input type="${multi?"checkbox":"radio"}" name="${name}" value="${i}"><span>${esc(o)}</span></label>`).join("")}</fieldset>
+    <div class="kc-actions"><button class="btn" type="submit" disabled>Submit</button><button class="btn ghost" type="button" data-retry hidden>Try again</button></div>
+    <div class="fb" role="status" aria-live="polite"></div>
+  </form></div>`;
+}
+function rSources(){
+  return `<div class="block"><h2>Sources</h2><ol class="sources">${Object.entries(S).map(([id,s])=>
+    `<li id="sources-${id}"><span class="sid">${id}</span><span>${esc(s.t)}${s.u?` <a href="${s.u}" target="_blank" rel="noopener">${esc(s.u)}</a>`:""}</span></li>`).join("")}</ol></div>`;
+}
+function rButton(b){
+  return `<div class="block" style="text-align:center"><a class="btn" href="${b.href}">${esc(b.label)}</a></div>`;
+}
+const R={text:rText,quote:rQuote,process:rProcess,acc:rAcc,table:rTable,list:rList,kc:rKC,sources:rSources,button:rButton};
+
+/* ---------- Views ---------- */
+function renderNav(cur){
+  nav.innerHTML=COURSE.lessons.map((l,i)=>`<li class="${state.done[l.id]?"done":""}"><button type="button" data-lesson="${l.id}" ${cur===l.id?'aria-current="page"':""}><span class="dot">${state.done[l.id]?"&#10003;":""}</span><span>${i<COURSE.lessons.length-1?`${i+1}. `:""}${esc(l.title)}</span></button></li>`).join("");
+  const n=COURSE.lessons.length, d=COURSE.lessons.filter(l=>state.done[l.id]).length, pct=Math.round(d/n*100);
+  $("#bar").style.width=pct+"%"; $("#barLabel").textContent=pct+"% complete";
+}
+function renderCover(){
+  document.title="Transcatheter Valve Education Pathway";
+  $("#topTitle").textContent="Course overview";
+  const started=Object.keys(state.done).length>0;
+  view.innerHTML=`<section class="cover"><div class="cover-inner">
+    <div class="eyebrow">${esc(COURSE.tag)}</div>
+    <h1>${esc(COURSE.title)}</h1>
+    <p class="sub">${esc(COURSE.sub)}</p>
+    <p class="desc">${esc(COURSE.desc)}</p>
+    <a class="btn" href="#${started?resumeId():COURSE.lessons[0].id}">${started?"Resume course":"Start course"} &#8594;</a>
+    <div class="cover-meta"><span>6 lessons</span><span>About 15 minutes</span><span>5 knowledge checks</span><span>8 public sources</span></div>
+  </div></section>`;
+  renderNav(null);
+  window.scrollTo(0,0);
+}
+function resumeId(){const l=COURSE.lessons.find(l=>!state.done[l.id]); return (l||COURSE.lessons[0]).id;}
+function renderLesson(id, anchor){
+  const idx=COURSE.lessons.findIndex(l=>l.id===id), L=COURSE.lessons[idx];
+  const last=idx===COURSE.lessons.length-1, next=COURSE.lessons[idx+1];
+  document.title=L.title+" | Transcatheter Valve Education Pathway";
+  $("#topTitle").textContent=L.title;
+  view.innerHTML=`<header class="lesson-head"><div class="wrap"><div class="lesson-num">${last?"Closing lesson":`Lesson ${idx+1} of ${COURSE.lessons.length-1}`}</div><h1>${esc(L.title)}</h1></div></header>
+    <section class="blocks"><div class="wrap">${L.blocks.map((b,bi)=>R[b.type](b,L.id,bi)).join("")}
+    <div class="continue">${next?`<span class="next-label">Next: ${esc(next.title)}</span><button class="btn" type="button" data-next="${next.id}">Continue &#8594;</button>`
+      :`<span class="next-label">You have reached the end of the sample.</span><button class="btn ghost" type="button" data-home>Back to overview</button>`}</div></div></section>`;
+  // wire process blocks
+  const procs=L.blocks.filter(b=>b.type==="process");
+  view.querySelectorAll("[data-process]").forEach((el,k)=>{el._b=procs[k]; el._seen=new Set(); setStage(el,0);});
+  // restore knowledge check answers
+  view.querySelectorAll("form.kc").forEach(f=>{const prev=state.kc[f.dataset.kc]; if(prev){prev.forEach(i=>f.querySelector(`input[value="${i}"]`).checked=true); grade(f,false);}});
+  if(last){state.done[L.id]=true; save();}
+  renderNav(id);
+  closeMenu();
+  if(anchor){const t=document.getElementById(anchor); if(t){t.scrollIntoView({block:"center"}); return;}}
+  window.scrollTo(0,0);
+}
+function setStage(el,i){
+  const b=el._b, n=b.steps.length; i=Math.max(0,Math.min(n-1,i));
+  el.dataset.i=i; el._seen.add(i);
+  el.querySelector(".process-stage").innerHTML=stageHTML(b,i);
+  el.querySelectorAll(".pip").forEach((p,k)=>{p.toggleAttribute("aria-current",k===i); if(k===i)p.setAttribute("aria-current","step"); p.classList.toggle("seen",el._seen.has(k));});
+  el.querySelector('[data-step="-1"]').disabled=i===0;
+  el.querySelector('[data-step="1"]').disabled=i===n-1;
+}
+function findKC(key){const [lid,bi]=key.split(":"); return COURSE.lessons.find(l=>l.id===lid).blocks[+bi];}
+function grade(f,store=true){
+  const b=findKC(f.dataset.kc);
+  const picked=[...f.querySelectorAll("input:checked")].map(i=>+i.value);
+  const right=picked.length===b.ans.length && picked.every(i=>b.ans.includes(i));
+  f.querySelectorAll(".opt").forEach((o,i)=>{const inp=o.querySelector("input"); inp.disabled=true;
+    if(right){o.classList.toggle("right",b.ans.includes(i));} else if(inp.checked){o.classList.add(b.ans.includes(i)?"right":"wrong");}});
+  const fb=f.querySelector(".fb");
+  fb.className="fb show "+(right?"ok":"no");
+  fb.innerHTML=`<strong>${right?"Correct":"Not quite"}</strong>${cite(esc(right?b.ok:b.no))}`;
+  f.querySelector('[type="submit"]').disabled=true;
+  f.querySelector("[data-retry]").hidden=right;
+  if(store){state.kc[f.dataset.kc]=picked; save();}
+}
+
+/* ---------- Routing and events ---------- */
+function route(){
+  const h=decodeURIComponent(location.hash.slice(1));
+  if(h.startsWith("sources-")) return renderLesson("sources",h);
+  if(COURSE.lessons.some(l=>l.id===h)) return renderLesson(h);
+  renderCover();
+}
+window.addEventListener("hashchange",route);
+
+document.addEventListener("click",e=>{
+  const t=e.target.closest("button,a"); if(!t) return;
+  if(t.dataset.lesson){location.hash=t.dataset.lesson;}
+  else if(t.dataset.next){const cur=location.hash.slice(1); state.done[cur]=true; save(); location.hash=t.dataset.next;}
+  else if(t.hasAttribute("data-home")){location.hash="";}
+  else if(t.dataset.go!==undefined){const p=t.closest("[data-process]"); setStage(p,+t.dataset.go);}
+  else if(t.dataset.step){const p=t.closest("[data-process]"); setStage(p,+p.dataset.i + +t.dataset.step);}
+  else if(t.hasAttribute("aria-expanded") && t.closest(".acc-item")){const open=t.getAttribute("aria-expanded")!=="true"; t.setAttribute("aria-expanded",open); document.getElementById(t.getAttribute("aria-controls")).hidden=!open;}
+  else if(t.hasAttribute("data-retry")){const f=t.closest("form"); delete state.kc[f.dataset.kc]; save();
+    f.querySelectorAll(".opt").forEach(o=>{o.classList.remove("right","wrong"); const i=o.querySelector("input"); i.disabled=false; i.checked=false;});
+    f.querySelector(".fb").className="fb"; t.hidden=true; f.querySelector('[type="submit"]').disabled=true;}
+  else if(t.classList.contains("cite")){e.preventDefault(); const id="sources-"+t.dataset.src; if(location.hash==="#"+id) route(); else location.hash=id;}
+});
+document.addEventListener("change",e=>{const f=e.target.closest("form.kc"); if(f) f.querySelector('[type="submit"]').disabled=!f.querySelector("input:checked");});
+document.addEventListener("submit",e=>{const f=e.target.closest("form.kc"); if(f){e.preventDefault(); grade(f);}});
+document.addEventListener("keydown",e=>{
+  const p=e.target.closest&&e.target.closest("[data-process]");
+  if(p&&(e.key==="ArrowRight"||e.key==="ArrowLeft")){e.preventDefault(); setStage(p,+p.dataset.i+(e.key==="ArrowRight"?1:-1)); p.querySelector('[aria-current="step"]').focus();}
+  if(e.key==="Escape") closeMenu();
+});
+const sideTitle=$("#sideTitle");
+sideTitle.addEventListener("click",()=>{location.hash="";});
+sideTitle.addEventListener("keydown",e=>{if(e.key==="Enter")location.hash="";});
+
+/* Mobile menu */
+const side=$("#side"), scrim=$("#scrim");
+function closeMenu(){side.classList.remove("open"); scrim.classList.remove("open");}
+$("#menuBtn").addEventListener("click",()=>{side.classList.add("open"); scrim.classList.add("open");});
+scrim.addEventListener("click",closeMenu);
+
+/* Theme */
+const root=document.documentElement;
+try{const th=localStorage.getItem(KEY+"-theme"); if(th) root.dataset.theme=th;}catch(e){}
+$("#themeBtn").addEventListener("click",()=>{
+  const dark=root.dataset.theme?root.dataset.theme==="dark":matchMedia("(prefers-color-scheme: dark)").matches;
+  root.dataset.theme=dark?"light":"dark";
+  try{localStorage.setItem(KEY+"-theme",root.dataset.theme);}catch(e){}
+});
+
+route();
+</script>
+</body>
+</html>
